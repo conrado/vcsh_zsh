@@ -79,4 +79,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias ack=ack-grep
+
 eval `dircolors ~/.dircolors`
+export ANSIBLE_NOCOWS=1
+
+if [[ $TERM = 'xterm' ]]; then
+    export TERM=xterm-256color
+fi
