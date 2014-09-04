@@ -45,7 +45,7 @@ ZSH_THEME="conrado"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(adb autoenv autopep8 aws bower cake catimg cp celery command-not-found common-aliases coffee colorize cpanm debian dircycle dirhistory dirpersist django docker encode64 extract fabric git git-extras gitfast github gitignore git-prompt git-remote-branch go gradle heroku history history-substring-search iwhois jake-node jsontools jump mercurial meteor mosh mvn node npm nvm nyan pass pep8 per-directory-history pip pj postgres pylint python redis-cli rsync scd singlechar ssh-agent sudo supervisor svn svn-fast-info systemadmin systemd themes tmux torrent vagrant virtualenv vundle wd web-search z zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,11 +79,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ack=ack-grep
-
-eval `dircolors ~/.dircolors`
-export ANSIBLE_NOCOWS=1
-
-if [[ $TERM = 'xterm' ]]; then
-    export TERM=xterm-256color
-fi
+for file in ~/.zshrc.d/*.zsh
+do
+    source $file
+done
