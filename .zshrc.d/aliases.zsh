@@ -9,3 +9,14 @@ alias exports='vim ~/.zshrc.d/exports.zsh'
 alias ema='emacs -nw'
 alias cm='chmod'
 alias gll='git --no-pager log --oneline --decorate --color --max-count=15'
+alias ans='ansible'
+alias ansp='ansible-playbook'
+alias ansd='ansible-doc'
+alias ansg='ansible-galaxy'
+
+alias lsd='ls -d */'
+alias lshd='ls -d \.??*'
+
+function ping_listen() {
+    sudo tcpdump -i $1 icmp and icmp[icmptype]=icmp-echo
+}
